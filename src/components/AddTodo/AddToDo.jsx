@@ -15,16 +15,14 @@ function AddToDo (props) {
     const getValueKeyboard = (e) => {
         // console.log(e.target.value)
         setValue(e.target.value)
-    }
-
-    const keyPress = (e) => {
-        console.log("key press")
+        props.addTodo(e.target.value.trim());
+            document.e.target.value = "";
     }
 
     return (
     <>   
         <h1>List note todo</h1>
-        <input value = {value} type='text' id="workInput" onChange={getValueKeyboard} onKeyPress={keyPress} onKeyDown={handleKeyDown} ></input>
+        <input value = {value} type='text' id="workInput" onChange={getValueKeyboard} onKeyDown={handleKeyDown} ></input>
         <button type="submit" id="btn" 
         onClick={() => {
             // console.log(document.getElementById('workInput').value);
